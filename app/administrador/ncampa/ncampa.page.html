@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Campañas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="!campain.length">
+    <ion-item *ngFor="let item of [0, 1, 2]">
+      <ion-avatar slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+      <h3>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </h3>
+      <p>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+      </p>
+      <p>
+          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+      </p>
+    </ion-item>
+  </ion-list>
+  <ion-list >
+    <ion-item-sliding *ngFor = "let conte of campain">
+      <ion-item button [routerLink]="['/detalles', conte.id]">
+        <ion-avatar slot= "start">
+          <img [src]="conte.campImg"/>
+        </ion-avatar>
+        <ion-label>
+            <p>Nombre de la campaña: <strong>{{conte.campName}}</strong></p>
+            <p>Inicio de campaña: <strong>{{conte.campInicio | date: 'dd/MM/yyyy'}}</strong></p>
+            <p>Fin de la campaña: <strong>{{conte.campFinal |  date: 'dd/MM/yyyy'}}</strong></p>
+            <p>URL de la imagen: {{conte.campImg}}</p>
+            <p>Objetivo: <strong>{{conte.campObj}}</strong></p>
+            <p>Descripción: <strong>{{conte.campDescrip}}</strong></p>
+            <p>Estado: <strong>{{conte.campEstado}}</strong></p>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="deleteCampain(conte.id)">
+            <ion-icon slot="top" name="trash"></ion-icon>
+            Eliminar
+          </ion-item-option>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+ <ion-toolbar>
+   <ion-grid>
+     <ion-row>
+      <ion-col size="6">
+         <ion-button routerLink="/detalles" expand="block" color="secondary">
+          Agregar campaña
+        </ion-button>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+ </ion-toolbar>
+</ion-footer>

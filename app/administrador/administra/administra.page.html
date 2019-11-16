@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color=secondary>
+    <ion-title class="encabezado">Administración del aplicativo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h1 class="titulo1">Administración</h1>
+    <p class="parrafo">Seleccione una de las opciones</p>
+    <ion-list>
+      <ion-list-header>
+          Administración de campañas
+      </ion-list-header>
+      <ion-item routerLink="/ncampa" detail>
+        <ion-icon slot="start" name="megaphone"></ion-icon>
+        <ion-label class="contenido">Gestionar campañas</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+          Administración de colectas
+      </ion-list-header>
+      <ion-item>
+          <ion-icon slot="start" name="cube"></ion-icon>
+        <ion-label class="contenido">Gestionar colectas</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+          Administración de voluntarios
+      </ion-list-header>
+      <ion-item>
+        <ion-icon slot="start" name="contact"></ion-icon>
+        <ion-label class="contenido">Gestionar voluntarios</ion-label>
+      </ion-item>
+      <ion-list-header>
+        Gestión de sesión
+    </ion-list-header>
+      <ion-item (click)="logout()" detail>
+        <ion-icon slot="start" name = "log-out"></ion-icon>
+        <ion-label class="contenido">Cerrar sesión</ion-label>
+      </ion-item>
+      <ion-item routerLink="/home" detail>
+        <ion-icon slot="start" name = "rewind"></ion-icon>
+        <ion-label class="contenido">Volver al inicio</ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>

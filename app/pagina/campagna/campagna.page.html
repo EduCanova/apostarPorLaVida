@@ -1,0 +1,69 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Campañas</ion-title>
+  </ion-toolbar>
+</ion-header>
+<style>
+  :root {
+    --ion-safe-area-top: 20px;
+    --ion-safe-area-bottom: 22px;
+  }
+  .swiper-slide {
+    display: block;
+  }
+  ion-slide > h2 {
+    margin-top: 2.8rem;
+  }
+  ion-slide > img {
+    max-height: 50%;
+    max-width: 60%;
+    margin: 36px 0;
+  }
+</style>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v5.0"></script>
+<ion-content >
+    <ion-list *ngIf="!contenidos2.length">
+        <ion-item *ngFor="let item of [0, 1, 2]">
+          <ion-avatar slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-avatar>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+          </p>
+        </ion-item>
+      </ion-list>
+ <!-- <ion-slides  fullscreen padding scroll-y="true">-->
+    <ion-slides class="ion-padding">
+    <ion-slide *ngFor = "let conte of contenidos2">
+      <h1><b>{{conte.campName}}</b></h1>
+      <p class="parrafo">La campaña inicila el: <b>{{conte.campInicio | date: 'dd/MM/yyyy'}}</b> <br> 
+      Finaliza el: <b>{{conte.campFinal | date: 'dd/MM/yyyy'}}</b> </p>
+      <h2 class="titulo2">Objetivo de esta campaña: </h2>
+        <p class="parrafo">{{conte.campObj}}</p>
+      <h2 class="titulo2">Descipción: </h2>
+      <p class="parrafo">{{conte.campDescrip}}</p>
+      <img class ="imagenes" [src]="conte.campImg"/>
+    </ion-slide>
+  </ion-slides>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed" >
+      <ion-fab-button color="tertiary" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fchatonline-5da64.firebaseapp.com%2Fcampagna&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+  </ion-content>
+  
+<ion-footer >
+   
+</ion-footer>
+  

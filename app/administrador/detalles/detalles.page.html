@@ -1,0 +1,86 @@
+<style> 
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #818181;
+      border-radius: 14px;
+    }
+    input[type=date] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #818181;
+      border-radius: 14px;
+    }
+    </style>
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+  
+      <ion-title>Campaña</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item>
+        <ion-label  position="floating">Título de la campaña</ion-label>
+        <ion-input type="text" [(ngModel)]="campains.campName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label  position="floating">Fecha inicio</ion-label>
+        <ion-datetime [(ngModel)]="fecha" min="2010" max="2050"></ion-datetime>
+      </ion-item>
+      <!--
+      <ion-fab vertical="center" horizontal="end" slot="fixed">
+          <ion-fab-button (click)="openGalery()">
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        -->
+        
+      <ion-item>
+         
+        <ion-label  position="floating">Fecha de finalización</ion-label>
+          <ion-datetime [(ngModel)]="fecha2" min="2010" max="2050"></ion-datetime>
+        </ion-item>
+      <ion-item>
+        <ion-label  position="floating">Imágen, cargado al: {{uploadPercent | async}}%</ion-label>
+        <ion-label class="ion-text-wrap">URL de la imagen: {{downloadUrl | async}}</ion-label>
+        <ion-input type="text" [(ngModel)]="campains.campImg"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label  position="floating">Objetivo</ion-label>
+        <ion-input type="text" [(ngModel)]="campains.campObj"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label><br>
+        <textarea rows="6" name="descripcion" cols="35" [(ngModel)]="campains.campDescrip"></textarea>
+        </ion-item>
+      <ion-item>
+        <ion-label>Publicado</ion-label>
+        <ion-checkbox color="secondary"  slot="start" [(ngModel)]="campains.campEstado"></ion-checkbox>         
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+    
+      <ion-button (click)="saveCampain()" expand="block" color="secondary">
+        Guardar
+      </ion-button>
+      <br>
+      <ion-button (click)="openGalery()" expand="block">Escoger foto</ion-button>
+    <br>
+    <div id="pwa">
+      <input type="file" id="pwaphoto" #pwaphoto accept="image/x-png,image/jpeg" (change)="uploadPWA()">
+    </div>
+    <div *ngIf="imgURI != null">
+      <img [src]="imgURI" #imageSrc style="width: 200px;">
+    </div>
+  </ion-footer>
+ 

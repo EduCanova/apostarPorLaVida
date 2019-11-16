@@ -1,0 +1,68 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-title >
+      Apostar por la Vida
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item routerLink="/ayudar" detail>
+        <ion-card-header >
+            <ion-card-subtitle>
+                <ion-avatar>
+                    <ion-img src="/assets/media/imagenes/ayuda.png" ></ion-img>
+              </ion-avatar>
+          </ion-card-subtitle>      
+        </ion-card-header>
+        <ion-card-content>
+            <ion-card-title>¿Qué donar?</ion-card-title>
+          <p align="justify">Enterate como podés colaborar con nosotros, 
+            todas las formas que podes ayudar vas a encontrar acá</p>  
+        </ion-card-content>
+    </ion-item>
+    <ion-item routerLink="/campagna" detail>
+      <ion-card-header>
+        <ion-card-subtitle><ion-avatar>
+          <img src="/assets/media/imagenes/campagna.jpg">
+        </ion-avatar></ion-card-subtitle>
+      </ion-card-header>  
+      <ion-card-content>
+          <ion-card-title>Campañas y colectas</ion-card-title>
+       <p align="justify"> Anualmente realizamos campañas de recolecta, no te pierdas ninguna, enterate como participar aquí </p> 
+      </ion-card-content>
+    </ion-item>
+    <ion-item routerLink="/ayudar" detail>
+      <ion-card-header>
+        <ion-card-subtitle><ion-avatar>
+          <img src="/assets/media/imagenes/voluntario.jpg">
+        </ion-avatar></ion-card-subtitle>
+      </ion-card-header>  
+      <ion-card-content>
+          <ion-card-title>Ser Voluntario</ion-card-title>
+       <p align="justify"> Anualmente realizamos campañas de recolecta, no te pierdas ninguna, enterate como participar aquí </p> 
+      </ion-card-content>
+    </ion-item>
+    <ion-item routerLink="/fundacion" detail>
+      <ion-card-header>
+        <ion-card-subtitle><ion-avatar>
+          <img src="/assets/media/imagenes/apostar.jpg">
+        </ion-avatar></ion-card-subtitle>
+      </ion-card-header>  
+      <ion-card-content>
+          <ion-card-title>La Fundación</ion-card-title>
+       <p align="justify"> Atendemos a Pacientes con Cáncer y con el apoyo de los Voluntarios del 
+         Alto Paraná conseguimos 
+         habilitar el Primer Hospital Día del Departamento </p> 
+      </ion-card-content>
+    </ion-item>
+  </ion-list>  
+</ion-content>
+<ion-footer >
+    <ion-fab  vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button href="https://api.whatsapp.com/send?phone=595994193701">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  <p class="pie" (click)="cargarInicio()">Apostar por la Vida 2019</p>
+</ion-footer>
