@@ -3,19 +3,26 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/home"></ion-back-button>
       </ion-buttons>
-      <ion-title>¿Qué donar?</ion-title>
+      <ion-title>Donar</ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-content class="ion-padding">
-    <p class="parrafo"> &nbsp;&nbsp;&nbsp;&nbsp;Podes acercar tus donaciones al predio de la fundasióm ubicada en la siguiente dirección: Avenida Fulgencio 
-      Yegros, Barrio Mariscal López, Hernandarias. <br>
-      Podes contactarnos a través del teléfono (0994) 193-701 <a href="tel:+595994193701"><ion-icon name=call></ion-icon></a>
-      <br>
-      <strong>Lo que más necesitamos en este momento son:</strong>
-    </p>
+      <ion-card>       
+          <ion-item calss="label1">
+              <ion-label >¿A dónde llevo mis donaciones?</ion-label>
+            </ion-item>
+          <ion-card-content>
+              <p> Podes acercar tus donaciones al predio de la fundasióm ubicada en la siguiente dirección: Avenida Fulgencio 
+                  Yegros, Barrio Mariscal López, Hernandarias. <br>
+                  Podes contactarnos a través del teléfono (0994) 193-701 
+                  <br>
+                  <strong>Lo que más necesitamos en este momento son:</strong>
+                </p>
+          </ion-card-content>
+        </ion-card>
 
-    <ion-list *ngIf="!campain.length">
+    <ion-list *ngIf="!ayudo.length">
       <ion-item *ngFor="let item of [0, 1, 2]">
         <ion-avatar slot="start">
           <ion-skeleton-text animated></ion-skeleton-text>
@@ -31,25 +38,18 @@
         </p>
       </ion-item>
     </ion-list>
-
       <ion-list>
-          <ion-item-sliding *ngFor = "let conte of campain">
-              <ion-card-header >
-                  <ion-card-subtitle>
-                      <ion-avatar>
-                          <ion-img [src]="conte.campImg" ></ion-img>
-                    </ion-avatar>
-                </ion-card-subtitle>      
-              </ion-card-header>
-              <ion-card-content button [routerLink]="['/detalles', conte.id]">
-                  <ion-card-title><strong>{{conte.campName}}</strong></ion-card-title>
-                  <p>Inicio de campaña: <strong>{{conte.campInicio | date: 'dd/MM/yyyy'}}</strong></p>
-                  <p>Fin de la campaña: <strong>{{conte.campFinal |  date: 'dd/MM/yyyy'}}</strong></p>
-                  <p>URL de la imagen: {{conte.campImg}}</p>
-                  <p>Objetivo: <strong>{{conte.campObj}}</strong></p>
-                  <p>Descripción: <strong>{{conte.campDescrip}}</strong></p>
-                  <p>más detalles...</p>
-              </ion-card-content>
+          <ion-item-sliding *ngFor = "let conte of ayudo">
+              <ion-card >
+                  <ion-item>
+                    <ion-label><strong>{{conte.ayuTitulo}}</strong></ion-label>
+                    <ion-button button [routerLink]="['/detalles-ayuda', conte.id]" fill="outline" slot="end">Más</ion-button>
+                  </ion-item>
+                
+                  <ion-card-content>
+                      <p>{{conte.ayuIntro}}</p>
+                  </ion-card-content>
+                </ion-card>
           </ion-item-sliding>
         </ion-list>    
      <ion-fab vertical="bottom" horizontal="end" slot="fixed">

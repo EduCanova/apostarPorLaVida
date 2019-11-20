@@ -25,7 +25,6 @@
       <ion-title>Campaña</ion-title>
     </ion-toolbar>
   </ion-header>
-  
   <ion-content class="ion-padding">
     <ion-list>
       <ion-item>
@@ -36,16 +35,8 @@
         <ion-label  position="floating">Fecha inicio</ion-label>
         <ion-datetime [(ngModel)]="fecha" min="2010" max="2050"></ion-datetime>
       </ion-item>
-      <!--
-      <ion-fab vertical="center" horizontal="end" slot="fixed">
-          <ion-fab-button (click)="openGalery()">
-            <ion-icon name="add"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-        -->
-        
+              
       <ion-item>
-         
         <ion-label  position="floating">Fecha de finalización</ion-label>
           <ion-datetime [(ngModel)]="fecha2" min="2010" max="2050"></ion-datetime>
         </ion-item>

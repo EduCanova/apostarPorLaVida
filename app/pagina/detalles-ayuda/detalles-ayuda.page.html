@@ -1,9 +1,30 @@
+
 <ion-header>
-  <ion-toolbar>
-    <ion-title>detallesAyuda</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/ayudar"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Detalles</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content>
-
+    <ion-content fullscreen>
+        <ion-card>
+          <ion-img [src]="ayudar.ayuImagen1"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>{{ayudar.ayuFecha | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
+            <ion-card-title>{{ayudar.ayuTitulo}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+           <p> {{ayudar.ayuDescri}}</p>
+          </ion-card-content>
+        </ion-card> 
+        <ion-fab horizontal="end" vertical="bottom" slot="fixed" >
+            <ion-fab-button color="tertiary" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fchatonline-5da64.firebaseapp.com%2Fdetalles-ayuda%2F{{ayudaId}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+      </ion-content>
+  
 </ion-content>

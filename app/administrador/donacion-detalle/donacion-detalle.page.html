@@ -1,0 +1,56 @@
+<style> 
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #818181;
+    border-radius: 14px;
+  }
+  input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #818181;
+    border-radius: 14px;
+  }
+  </style>
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Donación - detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label  position="floating">Título de la donación</ion-label>
+      <ion-input type="text" [(ngModel)]="ayudo.ayuTitulo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  position="floating">URL de la imágen</ion-label>
+        <ion-input [(ngModel)]="ayudo.ayuImagen1"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label  position="floating">Introducción</ion-label>
+      <ion-textarea rows="6" name="intro" cols="35" type="text" [(ngModel)]="ayudo.ayuIntro"></ion-textarea>
+    </ion-item>
+    <ion-item>
+        <ion-label  position="floating">Descripción</ion-label>
+        <ion-textarea rows="6" name="descripcion" cols="35" type="text" [(ngModel)]="ayudo.ayuDescri"></ion-textarea>
+      </ion-item>
+    <ion-item>
+      <ion-label>Publicado</ion-label>
+      <ion-checkbox color="secondary"  slot="start" [(ngModel)]="ayudo.ayuPublicado"></ion-checkbox>         
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="saveAyuda()" expand="block" color="secondary">
+      Guardar
+  </ion-button>
+</ion-footer>

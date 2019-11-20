@@ -10,7 +10,7 @@ export class AyudarService {
   private ayudarCollection: AngularFirestoreCollection<Ayudar>;
 
   constructor(private afs: AngularFirestore) { 
-    this.ayudarCollection= this.afs.collection<Ayudar>('donar');
+    this.ayudarCollection= this.afs.collection<Ayudar>('ayudar');
 }
 
 getAyuda (){
@@ -22,9 +22,31 @@ getAyuda (){
 
         return { id, ...data };
       });
-    })
+    }) 
   );
 
 }
+getAyudas(id: string){
+  return this.ayudarCollection.doc<Ayudar>(id).valueChanges();
 }
+
+addAyuda (ayudo: Ayudar){
+   
+  return this.ayudarCollection.add(ayudo);
+}
+
+updateAyuda (id: string, ayudo: Ayudar){
+  return this.ayudarCollection.doc<Ayudar>(id).update(ayudo);
+}
+getAyudar(id: string){ 
+  return this.ayudarCollection.doc<Ayudar>(id).valueChanges();
+
+}
+
+deleteAyuda(id: string){
+  return this.ayudarCollection.doc(id).delete();
+}
+
+
+} 
 

@@ -17,13 +17,13 @@ export class NcampaPage implements OnInit {
   private loading: any;
   constructor(private campainsService: CampainsService,
     public router: Router,
-    private authService: AuthService,
+    private authService: AuthService, 
     private loadingCtrl: LoadingController,
     private navCtrl: NavController,
     private toastCtrl: ToastController) {
     this.campainsSubscription = this.campainsService.getCampains().subscribe(data=>{
       this.campain = data;
-    });
+    }); 
    }
 
   ngOnInit() {  }

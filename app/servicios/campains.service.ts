@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import {Campains} from '../interfaces/campains';
 import {map} from 'rxjs/operators';
-
+ 
 @Injectable({
   providedIn: 'root'
 })
@@ -36,7 +36,7 @@ export class CampainsService {
   updateCampain (id: string, campains: Campains){
     return this.campainsCollection.doc<Campains>(id).update(campains);
   }
-  getCampain(id: string){
+  getCampain(id: string){ 
     return this.campainsCollection.doc<Campains>(id).valueChanges();
 
   }

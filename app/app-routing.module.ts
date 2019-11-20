@@ -18,6 +18,10 @@ const routes: Routes = [
   { path: 'detalles/:id', loadChildren: './administrador/detalles/detalles.module#DetallesPageModule',canActivate: [AuthGuard] },
   { path: 'detalles-ayuda', loadChildren: './pagina/detalles-ayuda/detalles-ayuda.module#DetallesAyudaPageModule' },
   {path: 'detalles-ayuda/:id', loadChildren: './pagina/detalles-ayuda/detalles-ayuda.module#DetallesAyudaPageModule' },
+  { path: 'voluntario', loadChildren: './administrador/voluntario/voluntario.module#VoluntarioPageModule', canActivate: [AuthGuard] },
+  { path: 'donacion', loadChildren: './administrador/donacion/donacion.module#DonacionPageModule', canActivate: [AuthGuard] },
+  { path: 'donacion-detalle', loadChildren: './administrador/donacion-detalle/donacion-detalle.module#DonacionDetallePageModule', canActivate: [AuthGuard] },
+  { path: 'donacion-detalle/:id', loadChildren: './administrador/donacion-detalle/donacion-detalle.module#DonacionDetallePageModule', canActivate: [AuthGuard] },
 ];
 
 @NgModule({

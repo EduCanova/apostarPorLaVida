@@ -23,15 +23,15 @@
       <p>
           <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
       </p>
-    </ion-item>
+    </ion-item> 
   </ion-list>
-  <ion-list >
+  <ion-list > 
     <ion-item-sliding *ngFor = "let conte of campain">
       <ion-item button [routerLink]="['/detalles', conte.id]">
         <ion-avatar slot= "start">
           <img [src]="conte.campImg"/>
         </ion-avatar>
-        <ion-label>
+        <ion-label> 
             <p>Nombre de la campaña: <strong>{{conte.campName}}</strong></p>
             <p>Inicio de campaña: <strong>{{conte.campInicio | date: 'dd/MM/yyyy'}}</strong></p>
             <p>Fin de la campaña: <strong>{{conte.campFinal |  date: 'dd/MM/yyyy'}}</strong></p>

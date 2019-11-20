@@ -10,7 +10,7 @@ import {AngularFireStorage } from '@angular/fire/storage';
 import {Observable} from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
-
+ 
 @Component({
   selector: 'app-detalles',
   templateUrl: './detalles.page.html',
@@ -39,19 +39,15 @@ export class DetallesPage implements OnInit {
     private campainService: CampainsService,
     private navCtrl: NavController,
   //  private platform: Platform,
-    //private file: File,
+    //private file: File, 
   //  private afStorage: AngularFireStorage 
   ){
-    
     this.campainId = this.activatedRoute.snapshot.params['id'];
     if (this.campainId) {
            this.loadCampain();
     }
-
-    
-
   }
-
+ 
   ngOnInit() {
   }
 
@@ -68,7 +64,6 @@ export class DetallesPage implements OnInit {
         this.campains.campFinal=Date.parse(this.fecha2);
         await this.campainService.updateCampain(this.campainId, this.campains);
         await this.loading.dismiss();
-
         this.navCtrl.navigateBack('/ncampa');
       } catch (error) {
         this.presentToast('Error al guardar');
@@ -81,7 +76,7 @@ export class DetallesPage implements OnInit {
           }
         this.campains.campInicio=Date.parse(this.fecha2);
         this.campains.campFinal=Date.parse(this.fecha);
-          console.log(Date.parse(this.fecha));
+          
           await this.campainService.addCapain(this.campains);
           await this.loading.dismiss();
           this.navCtrl.navigateBack('/ncampa');
@@ -90,8 +85,7 @@ export class DetallesPage implements OnInit {
         this.loading.dismiss();
       }
     }
-    
-  }
+  } 
   
   loadCampain(){
     this.campainSubscription = this.campainService.getCampain(this.campainId).subscribe(data => {

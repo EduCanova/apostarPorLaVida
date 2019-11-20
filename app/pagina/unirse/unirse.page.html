@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
       <ion-buttons slot="start">
         <ion-back-button routerLink="/home"></ion-back-button>
       </ion-buttons>
@@ -8,5 +8,34 @@
   </ion-header>
   
   <ion-content>
-  
+      <ion-card>
+        <ion-img class="imagen" src="assets/media/imagenes/portada.jpg"></ion-img>
+          <ion-item>
+            <ion-icon name="clipboard" slot="start"></ion-icon>
+            <ion-label>Contacto</ion-label>
+            <ion-button fill="outline" slot="end" (click)="saveVoluntario()">Enviar</ion-button>
+          </ion-item>
+          <ion-card-content>
+            <ion-item>
+                <ion-label  position="floating">Nombre*</ion-label>
+                <ion-input placeholder="Juan González" type="text" [(ngModel)]="voluntarios.volNombre"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label  position="floating">Correo electrónico</ion-label>
+                <ion-input placeholder="juang@micorreo.com" type="email" [(ngModel)]="voluntarios.volEmail"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label  position="floating">Teléfono*</ion-label>
+                <ion-input placeholder="0973123456" type="text" [(ngModel)]="voluntarios.volTel"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label  position="floating">Contanos un poco más sobre vos</ion-label>
+                <br>
+                <textarea rows="6" name="descripcion" cols="35" [(ngModel)]="voluntarios.volDescri"></textarea>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
   </ion-content>
+  <ion-footer>
+    <p class="advertencia">* Estos campos son obligatorios</p>
+  </ion-footer>

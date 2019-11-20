@@ -26,11 +26,11 @@ export class ContenidoService {
     
 
     
-return this.db.collection('campain').snapshotChanges().pipe(map(rooms => {
-      return rooms.map(a =>{
+return this.db.collection('campain').snapshotChanges().pipe(map(campas => {
+      return campas.map(a =>{
         const data = a.payload.doc.data() as conte;
         data.id = a.payload.doc.id;
-     
+        
           return data;
       
        

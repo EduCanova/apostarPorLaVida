@@ -19,7 +19,7 @@ export class CampagnaPage implements OnInit {
       this.contenidos= cont;
       this.contenidos2 =this.contenidos.filter(persona => persona.campEstado == true);
 
-     
+      
    }) 
   
   }
